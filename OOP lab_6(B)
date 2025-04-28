@@ -1,0 +1,31 @@
+interface Flyable {
+void fly();
+}
+class Bird implements Flyable {
+public void fly() {
+System.out.println("Bird is flying");
+} 
+void eatInsect() {
+System.out.println("Bird is eating a insect");
+} }
+class Airplane implements Flyable {
+public void fly() {
+System.out.println("Airplane is flying");
+} 
+void land() {
+System.out.println("Airplane is landing");
+} }
+public class OOP_Lab6_2 {
+public static void main(String[] args) {
+Flyable[] flyables = { new Bird(), new Airplane() }; 
+for (Flyable f : flyables) {
+f.fly();
+} 
+for (Flyable f : flyables) {
+if (f instanceof Bird) {
+Bird b = (Bird) f;
+b.eatInsect();
+} else if (f instanceof Airplane) {
+Airplane a = (Airplane) f;
+a.land();
+} } } }
